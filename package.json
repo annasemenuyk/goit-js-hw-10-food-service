@@ -21,5 +21,8 @@
   "homepage": "https://github.com/annasemenuyk/goit-js-hw-10-food-service#readme",
   "devDependencies": {
     "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.7"
   }
 }
