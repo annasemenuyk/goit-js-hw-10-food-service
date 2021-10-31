@@ -13,8 +13,8 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{}],"VyiV":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var e={menuList:document.querySelector(".js-menu"),themeSwitchBtn:document.querySelector(".theme-switch__toggle"),body:document.querySelector("body")};exports.default=e;
 },{}],"FIIv":[function(require,module,exports) {
-"use strict";var e=l(require("../menu.json")),t=l(require("../templates/menuList.hbs")),r=l(require("./theme")),c=l(require("./refs"));function l(e){return e&&e.__esModule?e:{default:e}}const{menuList:o,themeSwitchBtn:s}=c.default,{LIGHT:u,DARK:a}=r.default,d=(0,t.default)(e.default);function n(e){document.querySelector("body").classList.toggle(a),document.querySelector("body").classList.toggle(u);let t=e.target.checked?a:u;localStorage.setItem("theme",t)}o.insertAdjacentHTML("beforeend",d),s.addEventListener("change",n);let i=localStorage.getItem("theme");i||(i=u,localStorage.setItem("theme",i)),document.querySelector("body").classList.add(i),s.checked=i!==u;
-},{"../menu.json":"mA8c","../templates/menuList.hbs":"v5Ia","./theme":"qwQt","./refs":"VyiV"}],"Focm":[function(require,module,exports) {
+"use strict";var e=c(require("../menu.json")),t=c(require("../templates/menuList.hbs")),r=c(require("./theme.js")),s=c(require("./refs.js"));function c(e){return e&&e.__esModule?e:{default:e}}const{menuList:l,themeSwitchBtn:o}=s.default,{LIGHT:u,DARK:a}=r.default,d=(0,t.default)(e.default);function n(e){document.querySelector("body").classList.toggle(a),document.querySelector("body").classList.toggle(u);let t=e.target.checked?a:u;localStorage.setItem("theme",t)}l.insertAdjacentHTML("beforeend",d),o.addEventListener("change",n);let i=localStorage.getItem("theme");i||(i=u,localStorage.setItem("theme",i)),document.querySelector("body").classList.add(i),o.checked=i!==u;
+},{"../menu.json":"mA8c","../templates/menuList.hbs":"v5Ia","./theme.js":"qwQt","./refs.js":"VyiV"}],"Focm":[function(require,module,exports) {
 "use strict";require("./styles/main.scss"),require("./js/mainmenu.js");
 },{"./styles/main.scss":"LDUH","./js/mainmenu.js":"FIIv"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-10-food-service/src.f0d51b2e.js.map
+//# sourceMappingURL=/goit-js-hw-10-food-service/src.b7508df8.js.map
