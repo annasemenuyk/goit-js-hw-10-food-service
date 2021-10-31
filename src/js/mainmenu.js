@@ -1,7 +1,7 @@
 import menu from '../menu.json';
 import template from '../templates/menuList.hbs';
-import  Theme from './theme';
-import refs from './refs';
+import  Theme from './theme.js';
+import refs from './refs.js';
 const { menuList, themeSwitchBtn } = refs;
 const { LIGHT, DARK } = Theme;
 // Додавання списку меню
