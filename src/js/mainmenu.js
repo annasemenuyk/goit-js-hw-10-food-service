@@ -1,39 +1,41 @@
-import refs from './refs'
+import menu from './menu.json';
+import template from '../templates/menuList.hbs';
+
+import refs from './refs';
+const { menu, themeSwitchBtn } = refs;
+
 const Theme = {
-    LIGHT: 'light-theme',
-    DARK: 'dark-theme',
-  };
+  LIGHT: 'light-theme',
+  DARK: 'dark-theme',
+};
+const { LIGHT, DARK } = Theme;
 
-function onInputChange(e) {
-    if (e.currentTarget.checked) {
-        setDarkTheme();
-        saveThemeInformation();
-        return
-    };
-    setLightTheme();
-    saveThemeInformation();
+// Додавання списку меню
+const result = template(menu);
+menu.insertAdjacentHTML('beforeend', result);
+
+// Додавання слушателя собитій та зміна теми
+themeSwitchBtn.addEventListener('change', onChangeTheme);
+
+function onChangeTheme(event) {
+  document.querySelector('body').classList.toggle(DARK);
+  document.querySelector('body').classList.toggle(LIGHT);
+
+  let theme = event.target.checked ? DARK : LIGHT;
+  localStorage.setItem('theme', theme);
 }
 
-function saveThemeInformation() {
-    localStorage.setItem('darkTheme', refs.body.classList.contains(Theme.DARK))
+let theme = localStorage.getItem('theme');
+
+if (!theme) {
+  theme = LIGHT;
+  localStorage.setItem('theme', theme);
 }
 
-function setSavedTheme() {
-    const darkThemeIsOn = JSON.parse(localStorage.getItem('darkTheme'))
-    if (darkThemeIsOn) {
-        refs.themeSwitchBtn.checked = true;
-        setDarkTheme()
-    }
-}
+document.querySelector('body').classList.add(theme);
 
-function setLightTheme() {
-    refs.body.classList.remove(Theme.DARK);
-    refs.body.classList.add(Theme.LIGHT);
+if (theme === LIGHT) {
+    themeSwitchBtn.checked = false;
+} else {
+    themeSwitchBtn.checked = true;
 }
-
-function setDarkTheme() {
-    refs.body.classList.remove(Theme.LIGHT);
-    refs.body.classList.add(Theme.DARK);
-}
-
-export { onInputChange, saveThemeInformation, setSavedTheme };
