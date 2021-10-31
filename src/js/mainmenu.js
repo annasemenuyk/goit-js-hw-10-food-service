@@ -1,8 +1,8 @@
 import menu from './menu.json';
 import template from '../templates/menuList.hbs';
-import theme from './theme';
+import  Theme from './theme';
 import refs from './refs';
-const { menu, themeSwitchBtn } = refs;
+
 // Додавання списку меню
 const result = template(menu);
 menu.insertAdjacentHTML('beforeend', result);
