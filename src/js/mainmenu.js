@@ -9,8 +9,8 @@ const result = template(menu);
 menuList.insertAdjacentHTML('beforeend', result);
 
 // Додавання слушателя собитій та зміна теми
-themeSwitchBtn.addEventListener('change', onChangeTheme);
-function onChangeTheme(event) {
+themeSwitchBtn.addEventListener('change', changeTheme);
+function changeTheme(event) {
   document.querySelector('body').classList.toggle(DARK);
   document.querySelector('body').classList.toggle(LIGHT);
 
